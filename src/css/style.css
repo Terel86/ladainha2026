@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    background-color: #b6e7ff;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
+    height: 660px;
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #fffffffe;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.imagem-convite{
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.infos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    padding: 0 30px;
+    margin-top: -60px;
+    margin-bottom: 20px;
+    background-color: #ffffff23;
+    border-top: 1px solid #ffffff56;
+    backdrop-filter: blur(10px);
+    filter: drop-shadow( 5px );
+}
+
+.titulo-convite{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #3781c3;
+    margin-top: 20px;
+    text-shadow: 0 0 10px #ffffff;
+    letter-spacing: 1px;
+}
+
+.txt-convite{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: #3781c3;
+    margin-top: 10px;
+}
+
+.btns{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 20px;
+    margin-top: 9px;
+
+}
+.botao-convite{
+    width: 120px;
+    height: 40px;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ri-check-fill{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.botao-icone{
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #3781c3;
+    transition: all 0.5s ease-in-out;
+}
+
+.botao-icone:hover{
+    background-color: #2a5fa3;
+}
+
+.botao-icone i{
+    font-size: 24px;
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    .container {
+        width: min(100%, 520px);
+        height: auto;
+    }
+
+    .infos {
+        margin-top: -48px;
+        padding: 0 24px 20px;
+    }
+
+    .titulo-convite {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .txt-convite {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .btns {
+        height: auto;
+        align-items: center;
+        padding: 0 0 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        width: 100%;
+        border-radius: 18px;
+    }
+
+    .infos {
+        margin-top: -36px;
+        padding: 0 20px 18px;
+    }
+
+    .titulo-convite {
+        font-size: 0.95rem;
+    }
+
+    .txt-convite {
+        font-size: 0.8rem;
+    }
+
+    .btns {
+        gap: 24px;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        border-radius: 16px;
+    }
+
+    .imagem-convite {
+        margin-top: 0;
+    }
+
+    .infos {
+        margin-top: -24px;
+        padding: 0 16px 16px;
+    }
+
+    .titulo-convite {
+        font-size: 0.88rem;
+        margin-top: 16px;
+    }
+
+    .txt-convite {
+        font-size: 0.76rem;
+        line-height: 1.5;
+    }
+
+    .btns {
+        gap: 16px;
+        padding-bottom: 20px;
+    }
+
+    .botao-icone {
+        width: 46px !important;
+        height: 46px !important;
+    }
+}
