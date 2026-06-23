@@ -8,6 +8,10 @@
     <title>ladainha 2026</title>
 </head>
 <body>
+    <audio id="musica-fundo" autoplay loop preload="auto" playsinline muted>
+        <source src="src/musica-fundo.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="container">
         <img class="imagem-convite" src="src/img/imagem convite.png" alt="">
 
@@ -29,6 +33,36 @@
             </a>
         </div>
     </div>
+
+    <script>
+        const musicaFundo = document.getElementById('musica-fundo');
+
+        const iniciarMusica = () => {
+            if (!musicaFundo) return;
+
+            musicaFundo.muted = true;
+            musicaFundo.volume = 0.3;
+            musicaFundo.play().then(() => {
+                window.setTimeout(() => {
+                    musicaFundo.muted = false;
+                }, 300);
+            }).catch(() => {
+                const liberarAudio = () => {
+                    musicaFundo.muted = false;
+                    musicaFundo.play().catch(() => {});
+                    document.removeEventListener('pointerdown', liberarAudio);
+                    document.removeEventListener('touchstart', liberarAudio);
+                    document.removeEventListener('click', liberarAudio);
+                };
+
+                document.addEventListener('pointerdown', liberarAudio, { once: true });
+                document.addEventListener('touchstart', liberarAudio, { once: true });
+                document.addEventListener('click', liberarAudio, { once: true });
+            });
+        };
+
+        window.addEventListener('load', iniciarMusica);
+    </script>
     
 </body>
 </html>
