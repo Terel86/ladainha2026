@@ -12,6 +12,10 @@
         <source src="src/musica-fundo.mp3" type="audio/mpeg">
     </audio>
 
+    <button id="botao-audio" class="botao-audio" type="button" aria-label="Ativar música de fundo">
+        <i class="ri-volume-up-fill" aria-hidden="true"></i>
+    </button>
+
     <div class="container">
         <img class="imagem-convite" src="src/img/imagem convite.png" alt="">
 
@@ -36,29 +40,65 @@
 
     <script>
         const musicaFundo = document.getElementById('musica-fundo');
+        const botaoAudio = document.getElementById('botao-audio');
+
+        const esconderBotaoAudio = () => {
+            if (!botaoAudio) return;
+            botaoAudio.classList.add('oculto');
+            botaoAudio.setAttribute('aria-hidden', 'true');
+        };
+
+        const mostrarBotaoAudio = () => {
+            if (!botaoAudio) return;
+            botaoAudio.classList.remove('oculto');
+            botaoAudio.removeAttribute('aria-hidden');
+        };
+
+        const tocarComSom = () => {
+            if (!musicaFundo) return Promise.reject();
+
+            musicaFundo.muted = false;
+            musicaFundo.volume = 0.3;
+
+            return musicaFundo.play()
+                .then(() => {
+                    esconderBotaoAudio();
+                    return true;
+                })
+                .catch(() => {
+                    mostrarBotaoAudio();
+                    return false;
+                });
+        };
+
+        const liberarAudioNoPrimeiroGesto = () => {
+            tocarComSom();
+            document.removeEventListener('pointerdown', liberarAudioNoPrimeiroGesto);
+            document.removeEventListener('touchstart', liberarAudioNoPrimeiroGesto);
+            document.removeEventListener('keydown', liberarAudioNoPrimeiroGesto);
+        };
 
         const iniciarMusica = () => {
             if (!musicaFundo) return;
 
             musicaFundo.muted = true;
             musicaFundo.volume = 0.3;
-            musicaFundo.play().then(() => {
-                window.setTimeout(() => {
-                    musicaFundo.muted = false;
-                }, 300);
-            }).catch(() => {
-                const liberarAudio = () => {
-                    musicaFundo.muted = false;
-                    musicaFundo.play().catch(() => {});
-                    document.removeEventListener('pointerdown', liberarAudio);
-                    document.removeEventListener('touchstart', liberarAudio);
-                    document.removeEventListener('click', liberarAudio);
-                };
 
-                document.addEventListener('pointerdown', liberarAudio, { once: true });
-                document.addEventListener('touchstart', liberarAudio, { once: true });
-                document.addEventListener('click', liberarAudio, { once: true });
-            });
+            musicaFundo.play()
+                .then(() => {
+                    mostrarBotaoAudio();
+                })
+                .catch(() => {
+                    mostrarBotaoAudio();
+                });
+
+            document.addEventListener('pointerdown', liberarAudioNoPrimeiroGesto, { once: true });
+            document.addEventListener('touchstart', liberarAudioNoPrimeiroGesto, { once: true });
+            document.addEventListener('keydown', liberarAudioNoPrimeiroGesto, { once: true });
+
+            if (botaoAudio) {
+                botaoAudio.addEventListener('click', tocarComSom);
+            }
         };
 
         window.addEventListener('load', iniciarMusica);
