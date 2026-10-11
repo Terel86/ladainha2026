@@ -86,7 +86,6 @@ body{
     margin-top: 20px;
     text-shadow: 0 0 10px #ffffff;
     letter-spacing: 1px;
-    line-height: 1.5;
 }
 
 .txt-convite{
@@ -94,9 +93,9 @@ body{
     font-weight: 600;
     font-size: 0.7rem;
     color: #3781c3;
-    margin-top: 10px;
+    margin-top: 7px;
     text-align: justify;
-    line-height: 1.5;
+    line-height: 1.6;
     text-indent: 20px;
 }
 
