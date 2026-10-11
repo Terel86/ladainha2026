@@ -50,12 +50,12 @@ body{
     align-items: center;
     text-align: justify;
     flex-direction: column;
-    height: 660px;
+    height: 700px;
     width: 400px;
     max-width: 100%;
     margin: 0 auto;
     background-color: #fffffffe;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.242);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -97,6 +97,19 @@ body{
     font-size: 0.7rem;
     color: #3781c3;
     margin-top: 10px;
+    text-align: justify;
+    line-height: 1.5;
+    text-indent: 20px;
+}
+
+
+
+.texto-convite-final{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: #3781c3;
+    margin-top: 10px;
 }
 
 .btns{
@@ -120,6 +133,12 @@ body{
 }
 
 .ri-check-fill{
+    color: #00ff33;
+    font-size: 24px;
+    font-weight: bold;
+}
+.ri-map-pin-2-fill{
+    color: #ffea00;
     font-size: 24px;
     font-weight: bold;
 }
@@ -133,7 +152,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    /* color: #fff; */
     background-color: #3781c3;
     transition: all 0.5s ease-in-out;
 }
@@ -144,7 +163,7 @@ body{
 
 .botao-icone i{
     font-size: 24px;
-    color: #fff;
+    /* color: #fff; */
 }
 
 @media (max-width: 1024px) {
