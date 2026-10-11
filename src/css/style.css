@@ -73,10 +73,8 @@ body{
     flex-direction: column;
     text-align: justify;
     padding: 0 30px;
-    margin-top: -40px;
+    margin-top: -30px;
     margin-bottom: 20px;
-    border-top: 1px solid #ffffff56;
-    backdrop-filter: blur(10px);
     filter: drop-shadow( 5px );
 }
 
@@ -88,7 +86,7 @@ body{
     margin-top: 20px;
     text-shadow: 0 0 10px #ffffff;
     letter-spacing: 1px;
-    text-height: 1.5;
+    line-height: 1.5;
 }
 
 .txt-convite{
@@ -152,7 +150,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* color: #fff; */
     background-color: #3781c3;
     transition: all 0.5s ease-in-out;
 }
@@ -163,7 +160,6 @@ body{
 
 .botao-icone i{
     font-size: 24px;
-    /* color: #fff; */
 }
 
 @media (max-width: 1024px) {
