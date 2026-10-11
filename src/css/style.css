@@ -198,103 +198,62 @@ body{
     font-size: 24px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     body {
-        padding: 20px;
-        align-items: flex-start;
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 12px;
     }
 
     .container {
-        width: min(100%, 520px);
+        position: relative;
+        width: min(100%, 400px);
         height: auto;
+        aspect-ratio: 4 / 7;
+        border-radius: 20px;
+    }
+
+    .imagem-convite {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+        object-position: center top;
     }
 
     .infos {
-        margin-top: -48px;
-        padding: 0 24px 20px;
+        position: absolute;
+        inset: auto 0 0;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 12px clamp(16px, 5vw, 30px) 28px;
+        border-radius: 20px;
     }
 
     .titulo-convite {
-        font-size: 1rem;
+        margin-top: 0;
+        font-size: clamp(0.88rem, 3vw, 1rem);
         text-align: center;
     }
 
     .txt-convite {
-        font-size: 0.85rem;
-        line-height: 1.6;
+        margin-bottom: 0;
+        font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+        line-height: 1.5;
+    }
+
+    .data, .download {
+        font-size: clamp(0.65rem, 2.5vw, 0.75rem);
     }
 
     .btns {
         height: auto;
         align-items: center;
-        padding: 0 0 24px;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 16px;
-    }
-
-    .container {
-        width: 100%;
-        border-radius: 18px;
-    }
-
-    .infos {
-        margin-top: -36px;
-        padding: 0 20px 18px;
-    }
-
-    .titulo-convite {
-        font-size: 0.95rem;
-    }
-
-    .txt-convite {
-        font-size: 0.8rem;
-    }
-
-    .btns {
-        gap: 24px;
-        margin-top: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 12px;
-    }
-
-    .container {
-        border-radius: 16px;
-    }
-
-    .imagem-convite {
-        margin-top: 0;
-    }
-
-    .infos {
-        margin-top: -24px;
-        padding: 0 16px 16px;
-    }
-
-    .titulo-convite {
-        font-size: 0.88rem;
-        margin-top: 16px;
-    }
-
-    .txt-convite {
-        font-size: 0.76rem;
-        line-height: 1.5;
-    }
-
-    .btns {
-        gap: 16px;
-        padding-bottom: 20px;
-    }
-
-    .botao-icone {
-        width: 46px !important;
-        height: 46px !important;
+        gap: 40px;
+        margin: 0;
+        padding: 20px 0 0;
     }
 }
